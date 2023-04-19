@@ -8,7 +8,7 @@ const fs = require('node:fs');
 
 console.log('First');
 
-const myFile = fs.readFileSync('./myText.txt', 'utf-8');
+const myFile = fs.readFileSync('./NewText.txt', 'utf-8');
 console.log('1' + ' ' + myFile);
 
 console.log('Second');
@@ -23,7 +23,7 @@ const myFile2 = fs.readFile('./myText.txt', 'utf-8', (error, data) => {
     });
 console.log('Third');
 
-fs.writeFile('./NewText.txt', 'Hello Ethiopia', { flag: 'a' }, (error) => {
+fs.writeFile('./NewTextNew.txt', 'New text file',(error) => {
     if (error) {
         console.log(error);
     }
@@ -31,3 +31,5 @@ fs.writeFile('./NewText.txt', 'Hello Ethiopia', { flag: 'a' }, (error) => {
         console.log('The file was saved!');
     }
 });
+
+
