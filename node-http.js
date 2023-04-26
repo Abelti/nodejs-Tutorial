@@ -14,12 +14,13 @@ const { dirname } = require('node:path');
 const Person = {firstName: 'Abelti', lastName: 'Beshana'};
 
 // const server = http.createServer((req, res) => {
-//     const name = 'Abelti';
+//     const myname = 'Tsedi';
 //     res.writeHead(200, {'Content-Type': 'text/html'});
 //     let htmlFile = fs.readFileSync('./index.html', 'utf-8');
-//     htmlFile = htmlFile.replace('{{name}}', name);
+//     htmlFile = htmlFile.replace('{{name}}', myname);
 //     //fs.createReadStream('./index.html').pipe(res);
 //     //res.end('<h1>Hello World</h1>');
+//     //res.end(JSON.stringify(Person));
 //     res.end(htmlFile);
 //     //res.end(JSON.stringify(Person));
 // });
@@ -35,6 +36,10 @@ const server = http.createServer((req, res) => {
     else if (req.url === '/about') {
         res.writeHead(200, {'Content-Type': 'text/plain'});
         res.end('About page');
+    }
+    else if (req.url === '/contact') {
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('Contact page');
     }
     else {
         res.writeHead(404);
