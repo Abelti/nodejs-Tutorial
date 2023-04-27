@@ -11,41 +11,42 @@ const { dirname } = require('node:path');
 //dynamic values (html template)
 //routing
 
-const Person = {firstName: 'Abelti', lastName: 'Beshana'};
+// const Person = {firstName: 'Abelti', lastName: 'Beshana'};
 
 // const server = http.createServer((req, res) => {
-//     const myname = 'Tsedi';
-//     res.writeHead(200, {'Content-Type': 'text/html'});
-//     let htmlFile = fs.readFileSync('./index.html', 'utf-8');
-//     htmlFile = htmlFile.replace('{{name}}', myname);
-//     //fs.createReadStream('./index.html').pipe(res);
+//     const myname = 'Beka';
+//     res.writeHead(200, {'Content-Type': 'application/json'}, {'Content-Type': 'text/css'});
+//     //let htmlFile = fs.readFileSync('./index.html', 'utf-8');
+//     //let cssFile = fs.readFileSync('./main.css');
+//     //htmlFile = htmlFile.replace('{{name}}', myname);
+//     fs.createReadStream('./index.html').pipe(res);
 //     //res.end('<h1>Hello World</h1>');
-//     //res.end(JSON.stringify(Person));
-//     res.end(htmlFile);
+//     res.end(JSON.stringify(Person));
+//     //res.end(htmlFile, cssFile);
 //     //res.end(JSON.stringify(Person));
 // });
 
 //routing
 const server = http.createServer((req, res) => {
-    res.end (req.url);// to show the current url
-    console.log(req.url)
+    // res.end (req.url);// to show the current url
+    // console.log(req.url)
 
-    // if (req.url === '/') {
-    //     res.writeHead(200, {'Content-Type': 'text/plain'});
-    //     res.end('Home page');
-    // }
-    // else if (req.url === '/about') {
-    //     res.writeHead(200, {'Content-Type': 'text/plain'});
-    //     res.end('About page');
-    // }
-    // else if (req.url === '/contact') {
-    //     res.writeHead(200, {'Content-Type': 'text/plain'});
-    //     res.end('Contact page');
-    // }
-    // else {
-    //     res.writeHead(404);
-    //     res.end("Page not found");
-    // }
+    if (req.url === '/') {
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('Home page');
+    }
+    else if (req.url === '/about') {
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('About page');
+    }
+    else if (req.url === '/contact') {
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('Contact page');
+    }
+    else {
+        res.writeHead(404);
+        res.end("Page not found");
+    }
 });
 
 server.listen(3000, () => {
