@@ -4,7 +4,7 @@ const fs = require('fs');
 
 http.createServer(function (req, res) {
     const q = url.parse(req.url, true);
-    const filename = "." + q.pathname;
+    const filename = "." + q.pathname + '.html';
     fs.readFile(filename, function(err, data) {
     if (err) {
         res.writeHead(404, {'Content-Type': 'text/html'});
@@ -15,3 +15,4 @@ http.createServer(function (req, res) {
     return res.end();
     });
 }).listen(3003);
+
