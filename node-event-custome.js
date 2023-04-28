@@ -9,13 +9,13 @@
 const PizzaShop = require('./pizzashop');
 const Drink = require('./drink');
 
-const pizzaShop = new PizzaShop();
+const pizza = new PizzaShop(); //instance creation
 const drink = new Drink();
 
-pizzaShop.on('order', (size, topping) => {
+pizza.on('click', (size, topping) => {
     console.log(`Baking ${size} pizza with ${topping}`);
     drink.serveDrink(size);
 });
 
-pizzaShop.order('large', 'beef');
-pizzaShop.displayOrderNumber();
+pizza.order('large', 'beef');
+pizza.displayOrderNumber();

@@ -1,7 +1,7 @@
 class Drink {
     serveDrink(size) {
         if (size === 'large'){
-            console.log('Serving complmentary drinks');
+            console.log('Serving complementary drinks');
         }
     }
 }

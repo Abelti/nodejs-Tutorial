@@ -8,7 +8,8 @@ class PizzaShop  extends EventEmitter {
 
     order(size, topping) {
         this.orderNumber++;
-        this.emit('order', size, topping);
+        const click = onclick(key === '13');
+        this.emit(toString(click), size, topping);
     }
 
     displayOrderNumber() {
