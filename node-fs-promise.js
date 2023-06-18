@@ -11,6 +11,8 @@ async function readFile () {
     }
 };
 
+console.log('first')
+
 readFile();
 
 fs.readFile('file.txt', 'utf-8')

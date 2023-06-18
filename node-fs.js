@@ -1,4 +1,4 @@
-const fs = require('node:fs');
+const fs = require('fs');
 
 
 //writeFile
@@ -14,12 +14,14 @@ console.log('1' + ' ' + myFile);
 console.log('Second');
 
 const myFile2 = fs.readFile('./myText.txt', 'utf-8', (error, data) => {
-        if (error) {
-            console.log(error);
-        }
-        else {
-            console.log(data);
-        }
+        // if (error) {
+        //     console.log(error);
+        // }
+        // else {
+        //     console.log(data);
+        // }
+
+    console.log(error ? error : data);
     });
 console.log('Third');
 
